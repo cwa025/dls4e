@@ -19,3 +19,7 @@ git add  .
 git commit -m “type your sample commit message about commit hear”
 
 git push -u origin b1
+
+# Fetch latest code from specific branch
+git pull origin <branch-name>
+ex. "git checkout master" -> "git pull origin development"
