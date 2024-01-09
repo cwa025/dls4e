@@ -20,7 +20,7 @@ git commit -m “type your sample commit message about commit hear”
 
 git push -u origin b1
 
-# TO create branch
+# To create branch
 git branch dev b1
 
 git stash -u
@@ -34,3 +34,6 @@ git stash pop
 git add .
 
 git commit -m "..."
+
+# To create new worktree
+git worktree add pathX
