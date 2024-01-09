@@ -38,7 +38,7 @@ git add .
 git commit -m "..."
 
 # To create new worktree
-git worktree add pathX
+git worktree add path2
 
 # Push a project to existing Repository
 git init
