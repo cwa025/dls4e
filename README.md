@@ -1,5 +1,6 @@
 # dls4e
 always pull before push
+git fetch --all -prune
 
 git clone https://github.com/cwa025/dls4e
 
@@ -47,4 +48,4 @@ git commit -m “my first commit comments’
 
 git remote add origin https://github.com/cwa025/dls4e/
 
-git push -u origin main
+git push -u origin dev
