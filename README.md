@@ -1,6 +1,6 @@
 # dls4e
 always pull before push
-git fetch --all -prune
+"git fetch --all -prune"
 
 git clone https://github.com/cwa025/dls4e
 
