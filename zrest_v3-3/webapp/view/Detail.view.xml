@@ -1,0 +1,117 @@
+<mvc:View controllerName="ns.zrestv3.controller.Detail" xmlns="sap.m" xmlns:semantic="sap.f.semantic" xmlns:mvc="sap.ui.core.mvc">
+
+    <semantic:SemanticPage id="detailPage" busy="{detailView>/busy}" busyIndicatorDelay="{detailView>/delay}">
+        <semantic:titleHeading>
+            <Title text="Mitarbeiter: {Name}" level="H2"/>
+        </semantic:titleHeading>
+        <semantic:headerContent>
+            <IconTabBar selectedKey="__xmlview0--team" id="detailbar1">
+                <items><IconTabFilter xmlns:semantic="sap.f.semantic" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" text="Übersicht" icon="sap-icon://message-information" id="overview">
+                    <content>
+                        <sap.ui.layout.form:Form editable="true" xmlns:sap.ui.layout.form="sap.ui.layout.form" id="form0">
+                            <sap.ui.layout.form:formContainers>
+                                <sap.ui.layout.form:FormContainer id="container0" cd:w5g.dt.context="/Antrag" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+                                    <sap.ui.layout.form:formElements>
+                                        <sap.ui.layout.form:FormElement label="Verbleibend" id="element0">
+                                            <sap.ui.layout.form:fields>
+                                                <Input width="100%" id="input0" value="{Verbleibend} "/>
+                                            </sap.ui.layout.form:fields>
+                                        </sap.ui.layout.form:FormElement>
+                                        <sap.ui.layout.form:FormElement label="Beantragt" id="element0_1663858469738">
+                                            <sap.ui.layout.form:fields>
+                                                <Input width="100%" id="input0_1663858469738" value="{Beantragt} "/>
+                                            </sap.ui.layout.form:fields>
+                                        </sap.ui.layout.form:FormElement>
+                                        <sap.ui.layout.form:FormElement label="Genehmigt" id="element1">
+                                        <sap.ui.layout.form:fields>
+                                            <Input xmlns="sap.m" value="{Genehmigt}" id="input2"/>
+                                        </sap.ui.layout.form:fields>
+                                        </sap.ui.layout.form:FormElement>
+                                    </sap.ui.layout.form:formElements>
+                                </sap.ui.layout.form:FormContainer>
+                            </sap.ui.layout.form:formContainers>
+                            <sap.ui.layout.form:layout>
+                                <sap.ui.layout.form:ResponsiveGridLayout id="layout0"/>
+                            </sap.ui.layout.form:layout></sap.ui.layout.form:Form>
+                    </content>
+                    </IconTabFilter>
+                    <IconTabSeparator id="separator1"/>
+                    <IconTabFilter text="Antrag" icon="sap-icon://list" id="request">
+                    <content>
+                        <Text xmlns="sap.m" text="RequestNr: {RequestNr}&#xA;Name: {Name}({MitarbeiterID})&#xA;&#xA;von: { path: 'Datefrom', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'MM.dd.yyyy' } }&#xA;bis: { path: 'Dateto', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'MM.dd.yyyy' } }&#xA;&#xA;Status: {Status}&#xA;Halber Tag: {Halfday}&#xA;&#xA;Team: {Team}&#xA;Genehmiger: {Genehmiger}" id="RequestNr" cd:w5g.dt.context="/Antrag" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"/>
+                    </content>
+                    </IconTabFilter>
+                    <IconTabSeparator id="separator0"/>
+                    <IconTabFilter text="Team" icon="sap-icon://employee-lookup" id="team">
+                    <content>
+                        <IconTabBar id="detailbar2">
+                            <items>
+                                <IconTabFilter text="Beratung" id="consulting" key="1" count="1" iconColor="Neutral" content="{path:'/Antrag',filters:[{path:'Team',operator:'EQ',value1:'1'}]}">
+                                    <content>
+                                        <ObjectListItem xmlns:semantic="sap.f.semantic" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" type="Active" title="{Name}" numberUnit="Tage" id="teamdetail_1" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" number="{Beantragt}">
+                                            <attributes>
+                                                <ObjectAttribute text="von: { path: 'Datefrom', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'MM.dd.yyyy' } }" id="datefrom1"/>
+                                                <ObjectAttribute text="bis: { path: 'Dateto', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'MM.dd.yyyy' } }" id="dateto1"/>
+                                                </attributes>
+                                            <firstStatus>
+                                                <ObjectStatus id="status1" text="Status: {Status}" active="true"/>
+                                                
+                                            </firstStatus>
+                                            </ObjectListItem>
+                                    </content>
+                                </IconTabFilter>
+                                <IconTabFilter text="Entwicklung" id="development" key="2" count="2" iconColor="Neutral" content="{path:'/Antrag',filters:[{path:'Team',operator:'EQ',value1:'2'}]}">
+                                    <content>
+                                        <ObjectListItem xmlns:semantic="sap.f.semantic" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" type="Active" title="{Name}" numberUnit="Tage" id="teamdetail_2" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" number="{Beantragt}">
+                                            <attributes>
+                                                <ObjectAttribute text="von: { path: 'Datefrom', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'MM.dd.yyyy' } }" id="datefrom2"/>
+                                                <ObjectAttribute text="bis: { path: 'Dateto', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'MM.dd.yyyy' } }" id="dateto2"/>
+                                                </attributes>
+                                            <firstStatus>
+                                                <ObjectStatus id="status2" text="Status: {Status}" active="true"/>
+                                                
+                                            </firstStatus>
+                                            </ObjectListItem>
+                                    </content>
+                                </IconTabFilter>
+                                <IconTabFilter text="Infrastruktur" count="3" iconColor="Neutral" id="infrastructure" key="3" content="{path:'/Antrag',filters:[{path:'Team',operator:'EQ',value1:'3'}]}">
+                                    <content>
+                                        <ObjectListItem xmlns:semantic="sap.f.semantic" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" type="Active" title="{Name}" numberUnit="Tage" id="teamdetail_3" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" number="{Beantragt}">
+                                            <attributes>
+                                                <ObjectAttribute text="von: { path: 'Datefrom', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'MM.dd.yyyy' } }" id="datefrom3"/>
+                                                <ObjectAttribute text="bis: { path: 'Dateto', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'MM.dd.yyyy' } }" id="dateto3"/>
+                                                </attributes>
+                                            <firstStatus>
+                                                <ObjectStatus id="status3" text="Status: {Status}" active="true"/>
+                                                
+                                            </firstStatus>
+                                            </ObjectListItem>
+                                    </content>
+                                </IconTabFilter></items>
+                        </IconTabBar>
+                    </content>
+                    </IconTabFilter></items>
+            </IconTabBar>
+        </semantic:headerContent>
+        <semantic:content>
+
+        </semantic:content>
+        <!--Semantic ShareMenu Buttons-->
+        <semantic:sendEmailAction>
+            <semantic:SendEmailAction id="shareEmail" press=".onSendEmailPress"/>
+        </semantic:sendEmailAction>
+
+        <semantic:closeAction>
+            <semantic:CloseAction id="closeColumn" press=".onCloseDetailPress"/>
+        </semantic:closeAction>
+
+        <semantic:fullScreenAction>
+            <semantic:FullScreenAction id="enterFullScreen" visible="{= !${device>/system/phone} &amp;&amp; !${appView>/actionButtonsInfo/midColumn/fullScreen}}" press=".toggleFullScreen"/>
+        </semantic:fullScreenAction>
+        <semantic:exitFullScreenAction>
+            <semantic:ExitFullScreenAction id="exitFullScreen" visible="{= !${device>/system/phone} &amp;&amp; ${appView>/actionButtonsInfo/midColumn/fullScreen}}" press=".toggleFullScreen"/>
+        </semantic:exitFullScreenAction>
+
+    </semantic:SemanticPage>
+
+</mvc:View>
