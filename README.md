@@ -37,3 +37,14 @@ git commit -m "..."
 
 # To create new worktree
 git worktree add pathX
+
+# Push a project to existing Repository
+git init
+
+git add -A
+
+git commit -m “my first commit comments’
+
+git remote add origin https://github.com/cwa025/dls4e/
+
+git push -u origin main
